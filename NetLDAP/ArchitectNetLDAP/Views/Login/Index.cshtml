@@ -1,0 +1,37 @@
+﻿@model ArchitectNetLDAP.Models.LoginModel
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+    <div class="login" style="width: 350px !important; margin: 0 auto; margin-top: 200px;">
+        <div class="box">
+            <div class="notification tip"><span class="strong">Ldap Login</span>@Html.ValidationSummary(false, "")</div>
+            @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+            { 
+                <div class="form col">
+                    <div>
+                        @Html.LabelFor(f => f.Domain)
+                        @Html.TextBoxFor(f => f.Domain, new { title = "Enter Domain", @Value = @ViewBag.Domain })
+                    </div>
+                    <div>
+                        @Html.LabelFor(f => f.Username)
+                        @Html.TextBoxFor(f => f.Username, new { title = "Enter Username", @Value = @ViewBag.Username })
+                    </div>
+                    <div>
+                        @Html.LabelFor(f => f.Password)
+                        @Html.PasswordFor(f => f.Password, new { title = "Enter Password.", @Value = @ViewBag.Password })
+                    </div>
+                    <button type="submit" class="small fr">Login</button><br class="cl" />
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>

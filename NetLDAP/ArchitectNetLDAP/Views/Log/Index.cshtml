@@ -1,0 +1,31 @@
+﻿@model ArchitectNetLDAP.Models.LogModel
+@{
+    ViewBag.Title = "Index";
+}
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Logs</title>
+</head>
+<body>
+    <div>
+        <ul>
+            @if (Model != null)
+            {
+                if (Model.Logs != null)
+                {
+                    foreach (var l in Model.Logs)
+                    {
+<li>@string.Format("{0} : {1}", l.LoginDate.ToString(), l.Username)</li>
+                    }
+                }
+            }
+        </ul>
+    </div>
+</body>
+</html>
