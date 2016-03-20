@@ -52,7 +52,7 @@ namespace ArchitectNetLDAP.Controllers
 
                 if (isAuthenticated)
                 {
-                    FormsAuthentication.SetAuthCookie(model.Username, true);
+                    FormsAuthentication.SetAuthCookie(model.Username, true);                    
                     if (string.IsNullOrEmpty(returnurl))
                         return Json("OK");
                     else
